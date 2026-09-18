@@ -1,3 +1,45 @@
+
+
+/* ---- Backstage Comments (Giscus) ---- */
+(function(){
+  var sec = document.querySelector('#main .inner > section');
+  var h1 = sec ? sec.querySelector('header.main h1') : null;
+  if(!h1) return;
+  var bar = sec.querySelector('ul.actions');
+  if(!bar) return;
+  var wrap = document.createElement('div');
+  wrap.id = 'backstage-comments';
+  wrap.style.cssText = 'margin:2.5em 0 1.5em;padding-top:1.5em;border-top:2px solid rgba(125,18,38,0.15)';
+  var hd = document.createElement('h3');
+  hd.textContent = 'Comments';
+  hd.style.cssText = 'color:#7D1226;margin-bottom:1em;font-family:"Roboto Slab",Georgia,serif';
+  wrap.appendChild(hd);
+  var info = document.createElement('p');
+  info.style.cssText = 'font-size:0.85em;color:#666;margin-bottom:1em';
+  info.textContent = 'Sign in with GitHub to leave a comment. Your thoughts and contributions are welcome.';
+  wrap.appendChild(info);
+  var gd = document.createElement('div');
+  gd.className = 'giscus';
+  wrap.appendChild(gd);
+  bar.parentNode.insertBefore(wrap, bar);
+  var sc = document.createElement('script');
+  sc.src = 'https://giscus.app/client.js';
+  sc.setAttribute('data-repo','backstagenewsng/backstagenewsng.github.io');
+  sc.setAttribute('data-repo-id','R_kgDOT2BguQ');
+  sc.setAttribute('data-category','General');
+  sc.setAttribute('data-category-id','DIC_kwDOT2Bguc4DF16H');
+  sc.setAttribute('data-mapping','pathname');
+  sc.setAttribute('data-strict','0');
+  sc.setAttribute('data-reactions-enabled','1');
+  sc.setAttribute('data-emit-metadata','0');
+  sc.setAttribute('data-input-position','top');
+  sc.setAttribute('data-theme','light');
+  sc.setAttribute('data-lang','en');
+  sc.setAttribute('data-loading','lazy');
+  sc.crossOrigin = 'anonymous';
+  sc.async = true;
+  gd.appendChild(sc);
+})();
 /* ============================================================
    Backstage — site enhancements  (loaded after assets/js/main.js)
    ============================================================ */
